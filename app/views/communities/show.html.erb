@@ -5,5 +5,5 @@
   <%= @community.name %>
 </p>
 
-<%= link_to 'Edit', edit_community_path(@community) %> |
-<%= link_to 'Back', communities_path %>
+<%= link_to 'Edit', edit_community_path(@community), class: 'btn btn-warning btn-small' %>
+<%= link_to 'Back', communities_path, class: 'btn btn-default' %>
