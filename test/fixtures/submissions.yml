@@ -3,9 +3,9 @@
 one:
   title: MyString
   url: MyString
-  community_id: 
+  community: one
 
 two:
   title: MyString
   url: MyString
-  community_id: 
+  community: two

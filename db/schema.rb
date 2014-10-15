@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009012827) do
+ActiveRecord::Schema.define(version: 20141015170013) do
 
   create_table "communities", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "submissions", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "community_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "submissions", ["community_id"], name: "index_submissions_on_community_id"
 
 end
