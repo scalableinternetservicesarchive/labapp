@@ -1,6 +1,6 @@
 <%= form_for(@community) do |f| %>
   <% if @community.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@community.errors.count, "error") %> prohibited this community from being saved:</h2>
 
       <ul>
