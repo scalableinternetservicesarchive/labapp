@@ -5,5 +5,31 @@
   <%= @community.name %>
 </p>
 
+<h3>Submissions</h3>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @community.submissions.each do |submission| %>
+      <tr>
+        <td><%= submission.title %></td>
+        <td><%= submission.url %></td>
+        <td><%= link_to 'Show', submission %></td>
+        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
+        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Edit', edit_community_path(@community), class: 'btn btn-warning btn-small' %>
 <%= link_to 'Back', communities_path, class: 'btn btn-default' %>

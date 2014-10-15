@@ -12,7 +12,7 @@
 
 <p>
   <strong>Community:</strong>
-  <%= @submission.community %>
+  <%= link_to(@submission.community.name, @submission.community) if @submission.community %>
 </p>
 
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
