@@ -16,9 +16,8 @@
 </p>
 
 <h3>Comments</h3>
-<% @submission.comments.each do |comment| %>
-  <div class="well"><%= comment.message %></div>
-<% end %>
+<%= render @submission.root_comments %>
+
 
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
