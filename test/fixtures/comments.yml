@@ -2,10 +2,10 @@
 
 one:
   message: MyText
-  submission_id: 
-  parent_id: 
+  submission: one
+  parent_id:
 
 two:
   message: MyText
-  submission_id: 
-  parent_id: 
+  submission: two
+  parent_id:
