@@ -15,5 +15,10 @@
   <%= link_to(@submission.community.name, @submission.community) if @submission.community %>
 </p>
 
+<h3>Comments</h3>
+<% @submission.comments.each do |comment| %>
+  <div class="well"><%= comment.message %></div>
+<% end %>
+
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
