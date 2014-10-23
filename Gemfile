@@ -39,3 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'validate_url', '~> 0.2.2'
+gem 'devise'
