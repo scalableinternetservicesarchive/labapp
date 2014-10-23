@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'submissions#index', as: :home
+  root 'submissions#index'
 
   resources :comments
 
