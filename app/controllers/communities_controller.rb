@@ -1,10 +1,12 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   # GET /communities
   # GET /communities.json
   def index
     @communities = Community.all
+    respond_with @communities
   end
 
   # GET /communities/1
@@ -15,6 +17,7 @@ class CommunitiesController < ApplicationController
   # GET /communities/new
   def new
     @community = Community.new
+    respond_with @community
   end
 
   # GET /communities/1/edit
@@ -25,40 +28,23 @@ class CommunitiesController < ApplicationController
   # POST /communities.json
   def create
     @community = Community.new(community_params)
-
-    respond_to do |format|
-      if @community.save
-        format.html { redirect_to @community, notice: 'Community was successfully created.' }
-        format.json { render :show, status: :created, location: @community }
-      else
-        format.html { render :new }
-        format.json { render json: @community.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Community was successfully created.' if @community.save
+    respond_with @community
   end
 
   # PATCH/PUT /communities/1
   # PATCH/PUT /communities/1.json
   def update
-    respond_to do |format|
-      if @community.update(community_params)
-        format.html { redirect_to @community, notice: 'Community was successfully updated.' }
-        format.json { render :show, status: :ok, location: @community }
-      else
-        format.html { render :edit }
-        format.json { render json: @community.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Community was successfully updated.' if @community.update(community_params)
+    respond_with @community
   end
 
   # DELETE /communities/1
   # DELETE /communities/1.json
   def destroy
     @community.destroy
-    respond_to do |format|
-      format.html { redirect_to communities_url, notice: 'Community was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:notice] = 'Community was successfully destroyed.'
+    respond_with @community
   end
 
   private
