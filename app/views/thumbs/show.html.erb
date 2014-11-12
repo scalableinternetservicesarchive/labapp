@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @thumb.name %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @thumb.path %>
+</p>
+
+<%= link_to 'Edit', edit_thumb_path(@thumb) %> |
+<%= link_to 'Back', thumbs_path %>

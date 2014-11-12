@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023213456) do
+ActiveRecord::Schema.define(version: 20141112223247) do
 
   create_table "comments", force: true do |t|
     t.text     "message"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20141023213456) do
   end
 
   add_index "submissions", ["community_id"], name: "index_submissions_on_community_id"
+
+  create_table "thumbs", force: true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
