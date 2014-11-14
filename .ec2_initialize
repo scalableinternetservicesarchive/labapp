@@ -1,0 +1,2 @@
+# Seed the database with some data
+rake db:seed

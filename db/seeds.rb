@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+c = Community.create(name: 'Meta')
+s = Submission.create(title: 'Google', url: 'https://google.com/',
+                      community: c)
