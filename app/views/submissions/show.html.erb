@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<% cache @submission do %>
 <p>
   <strong>Title:</strong>
   <%= @submission.title %>
@@ -18,6 +19,6 @@
 <h3>Comments</h3>
 <%= render @submission.root_comments %>
 
-
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
+<% end %>

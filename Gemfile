@@ -42,3 +42,4 @@ gem 'spring',        group: :development
 
 gem 'validate_url', '~> 0.2.2'
 gem 'devise'
+gem 'dalli'

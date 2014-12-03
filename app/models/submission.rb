@@ -1,5 +1,5 @@
 class Submission < ActiveRecord::Base
-  belongs_to :community
+  belongs_to :community, touch: true
   has_many :comments
   validates :community, presence: true
   validates :title, length: { minimum: 5 }, uniqueness: true
